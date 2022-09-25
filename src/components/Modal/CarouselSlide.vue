@@ -26,16 +26,16 @@
       <img class="fit-object " :src="image.path" />
       
       <button
-        class="absolute top-[50%] left-0 bg-green-400 rounded text-white"
+        class="absolute top-[50%] left-[10px]  rounded text-black"
         @click="onPrev"
       >
-        Prev
+      <fa-icon icon="fa-solid fa-angle-left" />
       </button>
       <button
-        class="absolute top-[50%] right-0 bg-green-400 rounded text-white"
+        class="absolute top-[50%] right-[10px] rounded text-black"
         @click="onNext"
       >
-        Next
+       <fa-icon icon="fa-solid fa-angle-right" />
       </button>
     </div>
     <!--end -->

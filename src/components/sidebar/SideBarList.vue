@@ -24,7 +24,7 @@
     </button>
     <ul class="flex flex-col justify-center items-center gap-5 h-full" >
       <li  v-for="(link, i) in links" :key="i">
-        <router-link class="cursor-pointer px-4 py-1 text-2xl rounded-md hover:bg-slate-600" @click.native="$emit('close')" :to="link.link">
+        <router-link class="cursor-pointer px-4 py-1 text-2xl rounded-md hover:bg-slate-600 " @click.native="$emit('close')" :to="link.link">
           {{ link.name }}
         </router-link>
       </li>
@@ -41,7 +41,7 @@ export default {
       { name: "Overview", link: "/overview" },
       { name: "Brands", link: "/brands" },
       { name: "Wedding", link: "/wedding" },
-      { name: "About", link: "/#" },
+      { name: "About", link: "/about" },
     ],
   }),
 

@@ -1,9 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+
 import HomeView from '@/views/HomeView'
 import OverView from '@/views/OverView'
 import BrandView from '@/views/BrandsView'
 import WeddingView from '@/views/WeddingView'
+import AboutView from '@/views/AboutView'
 
 Vue.use(VueRouter)
 
@@ -27,6 +29,11 @@ const routes = [
     path: '/wedding',
     name: 'weddingView',
     component: WeddingView
+  },
+  {
+    path: '/about',
+    name: 'aboutView',
+    component: AboutView
   },
 ]
 
