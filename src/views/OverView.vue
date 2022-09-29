@@ -8,6 +8,11 @@
       md:px-16
     "
   >
+    <ModalImage
+      v-if="openModal"
+      @open="showModal"
+      @close="showModal"
+    />
     <h1 class=" md:text-3xl mt-5 border-b-[1px] border-black">Overview</h1>
 
     <div
@@ -29,6 +34,7 @@
         :key="i"
       >
         <img
+        @click.prevent="showModal"
           class="
             w-full
             rounded-xl
@@ -47,8 +53,13 @@
 </template>
 
 <script>
+import ModalImage from '@/components/Modal/OverviewModal/ModalImage.vue'
 export default {
+  components:{
+ModalImage
+  },
   data: () => ({
+    openModal: false,
     OverviewImages: [
       {
         id: 1,
@@ -93,8 +104,35 @@ export default {
     ],
   }),
   
+  methods: 
+  {
+    showModal() 
+    {
+      this.openModal = !this.openModal;
+      let sitebody = document.body;
+      
+//pass openModal boolean
+      this.openModal
+        ? sitebody.classList.add("overflow-hidden")
+        : sitebody.classList.remove("overflow-hidden");
+
+      // bus.$emit('openModalEmit', this.openModal)
+     let sideBarBtn = document.querySelector('.sideBtn')
+   
+      if( this.openModal == true){
+        sideBarBtn.classList.add('hidden')
+      }else{
+        sideBarBtn.classList.remove('hidden')
+      }
+    }
+  }
+  ,
+  provide() 
+  {
+    return {
+      dataFromParent: this.openModal,
+      imagesFromParent: this.OverviewImages
+    };
+  },
 };
 </script>
-
-<style>
-</style>
