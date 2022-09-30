@@ -5,6 +5,7 @@ import { faXmark, faBars, faAngleLeft, faAngleRight, } from '@fortawesome/free-s
 import { faFacebookMessenger,faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons'
 import { faFaceSadTear } from '@fortawesome/free-regular-svg-icons'
 
+
 library.add(faXmark, faBars, faFacebookMessenger, faAngleLeft, faAngleRight ,faFacebook, faInstagram, faFaceSadTear )
 
 Vue.component('fa-icon', FontAwesomeIcon)
