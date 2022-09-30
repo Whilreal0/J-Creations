@@ -55,8 +55,8 @@
 </template>
 
 <script>
-// import { bus } from '@/main'
-import ModalImage from "@/components/Modal/ModalImage";
+
+import ModalImage from "@/components/Modal/WeddingModal/ModalImage.vue";
 
 
 export default {

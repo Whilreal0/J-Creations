@@ -35,8 +35,8 @@
 </template>
 
 <script>
-import ModalOverlay from "@/components/Modal/ModalOverLay.vue";
-import CarouselSlide from "@/components/Modal/CarouselSlide";
+import ModalOverlay from "@/components/Modal/WeddingModal/ModalOverLay";
+import CarouselSlide from "@/components/Modal/WeddingModal/CarouselSlide";
 export default {
   components: {
     CarouselSlide,

@@ -53,7 +53,7 @@
 </template>
 
 <script>
-import ModalImage from '@/components/Modal/OverviewModal/ModalImage.vue'
+import ModalImage from '@/components/Modal/OverviewModal/ModalImage'
 export default {
   components:{
 ModalImage

@@ -11,16 +11,9 @@
        z-[100]
     "
   >
-  <transition
-      enter-class="opacity-0"
-      enter-active-class="ease-in transition-medium"
-      enter-to-class="opacity-100"
-      leave-class="opacity-100"
-      leave-active-class="ease-in transition-medium"
-      leave-to-class="opacity-0"
-    >
+
 <ModalOverlay />
-    </transition>
+
       
 
 
@@ -35,8 +28,8 @@
 </template>
 
 <script>
-import ModalOverlay from "@/components/Modal/OverviewModal/ModalOverLay";
-import CarouselSlide from "@/components/Modal/OverviewModal/CarouselSlide";
+import ModalOverlay from "@/components/Modal/BrandsModal/ModalOverLay";
+import CarouselSlide from "@/components/Modal/BrandsModal/CarouselSlide";
 export default {
   components: {
     CarouselSlide,

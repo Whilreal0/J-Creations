@@ -24,7 +24,7 @@
       <div class="flex justify-center mb-8">
         <img  class=" object-contain md:max-h-[500px] max-h-[300px] rounded-xl" :src="AboutMe.path" />
       </div>
-      <div class=" md:max-w-[500px] md:ml-10 text-lg bg-green-300">
+      <div class=" md:max-w-[500px] md:ml-10 text-lg ">
         <p class="whitespace-pre-line">
           I am Jason, a Freelance Photographer. I specialize in portrait photography
           but will take on any fun wedding sessions too  ​

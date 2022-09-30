@@ -8,7 +8,12 @@
       md:px-16
     "
   >
-    <h1 class=" md:text-3xl mt-5 border-b-[1px] border-black">Brands</h1>
+      <ModalImage
+      v-if="openModal"
+      @open="showModal"
+      @close="showModal"
+    />
+    <h1 class="md:text-3xl mt-5 border-b-[1px] border-black">Brands</h1>
     <div
       class="
         grid
@@ -28,17 +33,17 @@
         :key="i"
       >
         <img
+          @click.prevent="showModal"
           class="
             w-full
             rounded-xl
             object-scale-down
             cursor-pointer
             hover:translate-y-[3px] hover:-translate-x-[3px]
-            ease-in
-            duration-200
+            ease-in duration-200
           "
           :src="image.path"
-          alt=""
+         
         />
       </div>
     </div>
@@ -46,8 +51,13 @@
 </template>
 
 <script>
+import ModalImage from "@/components/Modal/BrandsModal/ModalImage";
 export default {
+  components: {
+    ModalImage,
+  },
   data: () => ({
+    openModal: false,
     brandImages: [
       {
         id: 1,
@@ -70,14 +80,42 @@ export default {
         path: [require("@/assets/images/NKD1.jpg")],
       },
       {
-        id: 6,
+        id: 7,
         path: [require("@/assets/images/NKD3.png")],
       },
     ],
   }),
-  watch :{
-    
+  methods: 
+  {
+    showModal() 
+    {
+      this.openModal = !this.openModal;
+      let sitebody = document.body;
+      
+//pass openModal boolean
+      this.openModal
+        ? sitebody.classList.add("overflow-hidden")
+        : sitebody.classList.remove("overflow-hidden");
+
+      // bus.$emit('openModalEmit', this.openModal)
+     let sideBarBtn = document.querySelector('.sideBtn')
+   
+      if( this.openModal == true){
+        sideBarBtn.classList.add('hidden')
+      }else{
+        sideBarBtn.classList.remove('hidden')
+      }
+    }
   }
+  ,
+  provide() 
+  {
+    return {
+      dataFromParent: this.openModal,
+      imagesFromParent: this.brandImages
+    };
+  },
+  
 };
 </script>
 
