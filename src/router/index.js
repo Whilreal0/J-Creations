@@ -6,6 +6,7 @@ import OverView from '@/views/OverView'
 import BrandView from '@/views/BrandsView'
 import WeddingView from '@/views/WeddingView'
 import AboutView from '@/views/AboutView'
+import PageNotFound from '@/views/PageNotFound'
 
 Vue.use(VueRouter)
 
@@ -35,6 +36,12 @@ const routes = [
     name: 'aboutView',
     component: AboutView
   },
+  {
+    path: '*',
+    name: 'PageNotFound',
+    component: PageNotFound
+  }
+
 ]
 
 const router = new VueRouter({
