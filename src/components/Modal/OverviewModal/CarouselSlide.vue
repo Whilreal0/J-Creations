@@ -50,34 +50,39 @@ export default {
     isVisible: false,
     currentSlideIndex: 0,
   }),
-methods: {
-    animate (element, animation, onAnimationEnd) 
-    {
-      const plainClassList = Array.prototype.slice.call(element.classList);
-      
-      const animationsToRemove = plainClassList.filter(
-        className => className.includes('animate__')
-      )
+methods: 
+{
+  animate (element, animation, onAnimationEnd) 
+  {
+    const plainClassList = Array.prototype.slice.call(element.classList);
+    const animationsToRemove = plainClassList.filter
+    (
+      className => className.includes('animate__')
+    )
       element.classList.remove('hidden', ...animationsToRemove);
       element.style.setProperty('--animate-duration', '1s');
       element.classList.add('animate__animated', animation);
-      if (onAnimationEnd) {
+      if (onAnimationEnd) 
+      {
         element.addEventListener('animationend', onAnimationEnd, {once:true})
-      }
-    },
-    getNextSlideIndex () {
+    }
+  },
+    getNextSlideIndex () 
+    {
       if (this.currentSlideIndex + 1 < this.imagesFromParent.length) {
         return this.currentSlideIndex + 1;
       }
       return 0;
     },
-    getPreviousSlideIndex () {
+    getPreviousSlideIndex () 
+    {
       if (this.currentSlideIndex > 0) {
         return this.currentSlideIndex - 1;
       }
       return this.imagesFromParent.length - 1;
     },
-    onNext () {
+    onNext () 
+    {
       const element = document.querySelector(`[data-index="${this.currentSlideIndex}"]`)
       this.animate(element, 'animate__slideOutLeft', () => {
         element.classList.add('hidden')
@@ -87,7 +92,8 @@ methods: {
       this.animate(nextElement, 'animate__slideInRight');
       this.currentSlideIndex = nextSlideIndex;
     },
-    onPrev () {
+    onPrev () 
+    {
       const element = document.querySelector(`[data-index="${this.currentSlideIndex}"]`)
       this.animate(element, 'animate__slideOutRight', () => {
         element.classList.add('hidden')
