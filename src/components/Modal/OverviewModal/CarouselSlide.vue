@@ -104,7 +104,7 @@ methods:
       this.currentSlideIndex = previousSlideIndex;
     }
   },
-  mounted () 
+  mounted ()
   {
     this.imagesFromParent.forEach((_, index) => {
       if (index !== this.currentSlideIndex) {
